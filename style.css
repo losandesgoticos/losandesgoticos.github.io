@@ -1,0 +1,253 @@
+/* Los Andes Góticos: estilos comunes a todas las páginas */
+
+:root {
+    --fondo: #0f0e0d;        /* negro cálido, como papel fotográfico */
+    --texto: #ebe6dc;        /* blanco hueso */
+    --texto-suave: #cfc9be;  /* párrafos */
+    --apagado: #9c968c;      /* leyendas y pie (contraste 6,5:1) */
+    --linea: #2e2b27;
+    --titulos: 'IM Fell English', Georgia, serif;
+    --cuerpo: 'Merriweather', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: var(--cuerpo);
+    line-height: 1.7;
+    margin: 0;
+    background-color: var(--fondo);
+    color: var(--texto);
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+a {
+    color: var(--texto);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover { color: var(--apagado); }
+
+a:focus-visible {
+    outline: 1px solid var(--texto);
+    outline-offset: 3px;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* Encabezado */
+header { margin-bottom: 20px; }
+
+header h1 {
+    font-family: var(--titulos);
+    margin: 0;
+    font-size: 3em;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+header p {
+    color: var(--apagado);
+    margin-top: 10px;
+}
+
+/* Navegación principal */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+}
+
+nav a {
+    font-size: 1.1em;
+    padding: 5px 0;
+}
+
+nav a[aria-current="page"] {
+    border-bottom: 1px solid var(--apagado);
+}
+
+/* Segunda fila: Acerca de y Contacto */
+.sidebar {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+}
+
+.sidebar a { font-size: 1.1em; }
+
+/* Contenido principal */
+main {
+    padding-top: 30px;
+    border-top: 1px dashed var(--linea);
+    margin-top: 40px;
+}
+
+main h2 {
+    font-family: var(--titulos);
+    font-size: 2.3em;
+    font-weight: 400;
+    margin: 0 0 20px;
+    line-height: 1.2;
+}
+
+main h3 {
+    font-family: var(--titulos);
+    font-size: 1.6em;
+    font-weight: 400;
+    margin: 44px 0 16px;
+}
+
+main p {
+    color: var(--texto-suave);
+    margin-bottom: 20px;
+}
+
+.leyenda {
+    font-size: 0.78em;
+    color: var(--apagado);
+    line-height: 1.5;
+}
+
+/* Acerca de */
+.retrato {
+    margin: 30px 0 20px;
+    text-align: center;
+}
+
+.retrato img { width: 80%; }
+
+.retrato figcaption { margin-top: 10px; }
+
+/* Música */
+.pieza { margin-bottom: 40px; }
+
+.pieza iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
+.pieza .leyenda { margin-top: 10px; }
+
+.pieza .leyenda a,
+.enlace-discreto a {
+    color: var(--apagado);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.pieza .leyenda a:hover,
+.enlace-discreto a:hover { color: var(--texto); }
+
+.enlace-discreto { font-size: 0.9em; }
+
+/* Fotos */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.galeria a { display: block; }
+
+.galeria img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.galeria a:hover img { opacity: 0.8; }
+
+.visor {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    max-width: 95vw;
+    max-height: 95vh;
+    cursor: zoom-out;
+}
+
+.visor::backdrop { background: rgba(8, 7, 6, 0.94); }
+
+.visor img {
+    display: block;
+    max-width: 95vw;
+    max-height: 90vh;
+    width: auto;
+}
+
+/* Academia */
+.publicaciones {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.publicaciones li {
+    color: var(--texto-suave);
+    line-height: 1.6;
+    margin-bottom: 18px;
+    padding-left: 2em;
+    text-indent: -2em;   /* sangría francesa, como en APA */
+    overflow-wrap: anywhere;
+}
+
+.publicaciones strong { color: var(--texto); font-weight: 700; }
+
+.publicaciones a {
+    color: var(--apagado);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.publicaciones a:hover { color: var(--texto); }
+
+.ornamento {
+    display: block;
+    width: 180px;
+    margin: 50px auto 10px;
+    filter: invert(1);
+    mix-blend-mode: screen;   /* el fondo blanco del dibujo desaparece */
+    opacity: 0.75;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding-top: 36px;
+    border-top: 1px solid var(--linea);
+    font-size: 0.85em;
+    color: var(--apagado);
+    margin-top: 60px;
+}
+
+footer a {
+    color: var(--apagado);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+footer a:hover { color: var(--texto); }
+
+@media (max-width: 480px) {
+    .container { margin: 20px auto; padding: 20px 16px; }
+    header h1 { font-size: 2.4em; }
+    main h2 { font-size: 2em; }
+    .retrato img { width: 100%; }
+}
+
+main h2.seccion { margin-top: 60px; }
