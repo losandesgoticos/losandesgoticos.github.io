@@ -172,11 +172,24 @@ main p {
 .enlace-discreto { font-size: 0.9em; }
 
 /* Fotos */
+.serie { margin-bottom: 44px; }
+
 .galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 14px;
-    margin-top: 30px;
+    margin-top: 12px;
+}
+
+.galeria.dos { grid-template-columns: repeat(2, 1fr); }
+
+.galeria figure { margin: 0; }
+
+.galeria figcaption {
+    margin-top: 6px;
+    font-size: 0.75em;
+    line-height: 1.4;
+    color: var(--apagado);
 }
 
 .galeria a { display: block; }
@@ -205,8 +218,15 @@ main p {
 .visor img {
     display: block;
     max-width: 95vw;
-    max-height: 90vh;
+    max-height: 86vh;
     width: auto;
+}
+
+.visor-pie {
+    margin: 10px 0 0;
+    font-size: 0.85em;
+    color: var(--apagado);
+    text-align: center;
 }
 
 /* Academia */
@@ -267,6 +287,7 @@ footer a:hover { color: var(--texto); }
     header h1 { font-size: 2.4em; }
     main h2 { font-size: 2em; }
     .retrato img { width: 100%; }
+    .galeria, .galeria.dos { grid-template-columns: 1fr; }
 }
 
 main h2.seccion { margin-top: 60px; }
