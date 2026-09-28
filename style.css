@@ -138,6 +138,25 @@ main p {
     border: 0;
 }
 
+.pieza iframe.video {
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+.pista { margin: 0 0 14px; }
+
+.pista figcaption {
+    font-size: 0.9em;
+    color: var(--apagado);
+    margin-bottom: 4px;
+}
+
+.pista audio {
+    display: block;
+    width: 100%;
+    color-scheme: dark;
+}
+
 .pieza .leyenda { margin-top: 10px; }
 
 .pieza .leyenda a,
